@@ -1,0 +1,11 @@
+---
+# tasks file for httpd
+- name: including install playbooks
+  include_tasks: install_httpd.yml
+  when: action == "install"
+- name: deploying html page
+  include_tasks: deploy_html.yml
+  when: action == "install"
+- name: uninstalling "{{pkg_name[0]}}" package
+  include_tasks: uninstall_httpd.yml
+  when: action == "uninstall"

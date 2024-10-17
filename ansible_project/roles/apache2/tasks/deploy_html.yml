@@ -1,0 +1,6 @@
+---
+- name: deploying html file
+  template: 
+    src: index.html.j2 
+    dest: /var/www/html/index.html 
+  notify: restart "{{pkg_name}}" service

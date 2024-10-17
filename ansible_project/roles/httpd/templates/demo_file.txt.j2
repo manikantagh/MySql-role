@@ -1,0 +1,20 @@
+This is demo file
+Using replace filter
+{{"Ansible collection" | replace("collection","\b-galaxy")}}
+hostname = {{ansible_nodename}}
+OS= {{ansible_os_family}}
+OS_distribution= {{ansible_distribution | capitalize}}
+OS_version= {{ansible_distribution_version}}
+CPU information
+CPU_architecture= {{ansible_architecture | upper }}
+ip address
+ipv4 address = {{ansible_default_ipv4["address"]}}
+user loggedin
+the user logged in is {{ansible_facts['user_id']}}
+packages defines in vars folder are:
+{% for item in pkg_name %}
+{{item}}
+{% endfor %}
+
+
+

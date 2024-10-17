@@ -1,0 +1,6 @@
+---
+- name: Installing {{pkg_name}} on ubuntu
+  apt: name="{{pkg_name}}" state=present
+  register: result
+  when: ansible_os_family == "Debian"
+  notify: start "{{pkg_name}}" service

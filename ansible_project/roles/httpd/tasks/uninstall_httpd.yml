@@ -1,0 +1,9 @@
+---
+- name: stopping "{{pkg_name[0]}}" service
+  service: name="{{pkg_name[0]}}" state=stopped
+- name: uninstalling "{{pkg_name[0]}}"
+  package: name="{{pkg_name[0]}}" state="{{pkg_state[1]}}"
+- name: stopping "{{pkg_name[1]}}" service
+  service: name="{{pkg_name[1]}}" state=stopped
+- name: uninstalling "{{pkg_name[1]}}"
+  package: name="{{pkg_name[1]}}" state="{{pkg_state[1]}}"

@@ -1,0 +1,10 @@
+---
+# handlers file for httpd
+- name: start the "{{pkg_name[0]}}" service
+  service: name="{{pkg_name[0]}}" state=started enabled=yes
+- name: restart "{{pkg_name[0]}}" service
+  service: name="{{pkg_name[0]}}" state=restarted
+- name: start "{{pkg_name[1]}}" service
+  service: name="{{pkg_name[1]}}" state=started enabled=yes
+- name: restart "{{pkg_name[1]}}" service
+  service: name="{{pkg_name[1]}}" state=restarted

@@ -1,0 +1,28 @@
+---
+- name: installing "{{pkg_name[0]}}" on aws linux managed server
+  package: name="{{pkg_name[0]}}" state="{{pkg_state[0]}}"
+  async: 5
+  poll: 0
+  register: httpd_install_job
+  notify: start the "{{pkg_name[0]}}" service
+
+- name: installing "{{pkg_name[1]}}" on aws linux managed server
+  package: name="{{pkg_name[1]}}" state="{{pkg_state[0]}}"
+  async: 5
+  poll: 0
+  notify: start "{{pkg_name[1]}}" service
+  register: firewalld_install_job
+
+- name: wait for "{{pkg_name[0]}}" to install
+  async_status: jid="{{httpd_install_job.ansible_job_id}}" 
+  register: job_result
+  until: job_result.finished
+  retries: 5
+  delay: 1
+- name: wait for "{{pkg_name[1]}}" to install
+  async_status: jid="{{firewalld_install_job.ansible_job_id}}"
+  register: job_result1
+  until: job_result1.finished
+  retries: 5
+  delay: 1
+

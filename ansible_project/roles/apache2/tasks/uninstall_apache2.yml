@@ -1,0 +1,4 @@
+- name: Stopping "{{pkg_name}}" service
+  service: name="{{pkg_name}}" state=stopped
+- name: uninstalling apache2
+  apt: name="{{pkg_name}}" state=absent

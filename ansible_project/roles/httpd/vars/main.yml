@@ -1,0 +1,15 @@
+---
+# vars file for httpd
+pkg_name: 
+  - httpd
+  - firewalld
+  - apache2
+  - tree
+pkg_state: 
+  - present
+  - absent
+title: webpage
+header: This is html webpage
+dest_path: /var/www/html/index.html
+dest_path_demo: /var/www/html/demo_file.txt
+username: admin

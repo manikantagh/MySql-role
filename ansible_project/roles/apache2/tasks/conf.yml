@@ -1,0 +1,7 @@
+- name: Updating ports.conf file with unique port
+  template: src=ports.conf.j2 dest=/etc/apache2/ports.conf
+  notify: restart "{{pkg_name}}" service
+- name: Update defaults.conf file
+  template: src=000-default.conf.j2 dest=/etc/apache2/sites-enabled/000-default.conf
+  notify: restart "{{pkg_name}}" service
+

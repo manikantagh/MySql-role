@@ -1,0 +1,6 @@
+---
+- name: deploying html file on managed server
+  template: src=index.html.j2 dest="{{dest_path}}"
+  notify: restart "{{pkg_name[0]}}" service
+- name: copying demo.txt file 
+  template: src=demo_file.txt.j2 dest="{{dest_path_demo}}"

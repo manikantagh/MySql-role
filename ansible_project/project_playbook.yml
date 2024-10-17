@@ -1,0 +1,6 @@
+---
+- name: playbook to install apache using roles
+  hosts: ubuntuservers
+  become: yes
+  roles:
+      - apache2

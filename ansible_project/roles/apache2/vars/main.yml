@@ -1,0 +1,8 @@
+---
+# vars file for nginx
+pkg_name: apache2
+title: web page
+document_root: /var/www/html
+httpd_port: 80
+header: hello manikanta!!
+config_files:

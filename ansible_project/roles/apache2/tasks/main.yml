@@ -1,0 +1,14 @@
+---
+# tasks file for apache2
+- name: installing {{pkg_name}}
+  include_tasks: install_apache2.yml
+  when: action== "install"
+- name: deploying html file
+  include_tasks: deploy_html.yml
+  when: action == "install"
+- name: copying config file
+  include_tasks: conf.yml
+  when: action == "install"
+- name: uninstalling {{pkg_name}}
+  include_tasks: uninstall_apache2.yml
+  when: action == "uninstall"

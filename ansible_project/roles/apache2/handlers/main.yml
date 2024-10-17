@@ -1,0 +1,7 @@
+---
+- name: start "{{pkg_name}}" service
+  service: name="{{pkg_name}}" state=started
+- name: stop "{{pkg_name}}" service
+  service: name="{{pkg_name}}" state=stopped
+- name: restart "{{pkg_name}}" service
+  service: name="{{pkg_name}}" state=restarted
