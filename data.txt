@@ -1,0 +1,5 @@
+Name Dob Place
+Manikanta 18-11-1997 Karimnagar
+Mani 12-8-1990 hyd
+mynur 18-8-2000 warangal
+
