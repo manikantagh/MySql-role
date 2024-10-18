@@ -1,0 +1,7 @@
+---
+- name: playbook to install apache using roles
+  hosts: all
+  become: yes
+  tasks:
+   - name: ping user
+     command: whoami
